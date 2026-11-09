@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "CleanXLink",
+  "version": "1.1.0",
+  "description": "Gỡ t.co trên X, bỏ tham số theo dõi và đổi link X/Bluesky/Reddit sang dạng embed (fxtwitter, fxbsky, vxreddit) khi copy.",
+  "permissions": ["storage"],
+  "action": {
+    "default_title": "CleanXLink",
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://x.com/*", "https://*.x.com/*",
+        "https://twitter.com/*", "https://*.twitter.com/*",
+        "https://bsky.app/*",
+        "https://reddit.com/*", "https://*.reddit.com/*",
+        "https://facebook.com/*", "https://*.facebook.com/*",
+        "https://instagram.com/*", "https://*.instagram.com/*"
+      ],
+      "js": ["src/bridge.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "https://x.com/*", "https://*.x.com/*",
+        "https://twitter.com/*", "https://*.twitter.com/*",
+        "https://bsky.app/*",
+        "https://reddit.com/*", "https://*.reddit.com/*",
+        "https://facebook.com/*", "https://*.facebook.com/*",
+        "https://instagram.com/*", "https://*.instagram.com/*"
+      ],
+      "js": ["src/cleanxlink.js"],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": false
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "cleanxlink@local",
+      "strict_min_version": "128.0"
+    }
+  }
+}
