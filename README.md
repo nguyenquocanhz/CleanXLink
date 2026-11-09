@@ -61,3 +61,6 @@ Debug trên trang (F12 → Console): `__cleanXLink.map`, `__cleanXLink.settings(
 - *Sao chép địa chỉ liên kết* bằng chuột phải lấy thẳng `href` nên **không** đổi sang Fixups (chỉ gỡ t.co); dùng nút *Sao chép liên kết* của trang hoặc Ctrl+C để có link embed.
 - Copy từ thanh địa chỉ trình duyệt không qua extension nên không được xử lý.
 - Link t.co mà X không trả kèm `expanded_url` và chữ hiển thị bị cắt (`…`) sẽ được giữ nguyên.
+
+## Giấy phép
+[MIT](LICENSE)
